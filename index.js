@@ -10,8 +10,8 @@ exports.desc = 'update components package';
 exports.options = {
     '-h, --help': 'print this help message',
     '-r, --root <path>': 'set project root',
-    '-s, --save': 'save component(s) dependencies into `package.json` file',
-    '-d, --save-dev': 'save component(s) dependencies into `package.json` devDependencies'
+    '-s, --save': 'update component(s) dependencies of `package.json` file',
+    '-d, --save-dev': 'update component(s) devDependencies of `package.json`'
 };
 
 exports.run = function (argv, cli, env) {
