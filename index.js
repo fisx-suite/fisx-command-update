@@ -11,7 +11,8 @@ exports.options = {
     '-h, --help': 'print this help message',
     '-r, --root <path>': 'set project root',
     '-s, --save': 'update component(s) dependencies of `package.json` file',
-    '-d, --save-dev': 'update component(s) devDependencies of `package.json`'
+    '-d, --save-dev': 'update component(s) devDependencies of `package.json`',
+    '--registry <url>': 'set the npm default registry to use'
 };
 
 exports.run = function (argv, cli, env) {
@@ -24,7 +25,8 @@ exports.run = function (argv, cli, env) {
     var options = {
         root: env.cwd,
         saveToDevDep: argv['save-dev'] || argv.d,
-        saveToDep: argv.save || argv.s
+        saveToDep: argv.save || argv.s,
+        registry: argv.registry
     };
     return pkgManage.initProjectRoot(env.configNameSearch[0], options, fis)
         .then(pkgManage.loadUserConfig.bind(this, env.configNameSearch[0], options, fis))
